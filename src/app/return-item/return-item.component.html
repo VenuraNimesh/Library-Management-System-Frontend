@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Return Items</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form #returnForm="ngForm" (ngSubmit)="onSubmit(returnForm)" class="text-center border border-light p-5">
+
+      <p class="h4 mb-4">Return Items</p>
+
+
+      <input type="text" name="ISBN" [(ngModel)] ="ISBN" class="form-control mb-4" placeholder="ISBN">
+      <input type="datetime-local" name="returnDate" [(ngModel)] ="returnDate"  class="form-control mb-4" placeholder="ReturnDate">
+
+      <button (click)="onSubmit(returnForm.value)"mdbBtn color="indigo" block="true" type="submit">Return</button>
+
+
+    </form>
+  </mat-card-content>
+</mat-card>

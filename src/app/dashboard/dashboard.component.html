@@ -1,0 +1,33 @@
+
+<div class="col-sm-3 card p-1">
+  <div class ="card-body" >
+    <h5 class="card-title">Books</h5>
+    <p class="card-text">No of Books:{{bookCount}} </p>
+    <p class="card-text">Free Space:{{100-bookCount}} </p>
+
+  </div>
+</div>
+
+<br><br>
+<div class="col-sm-3 card p-1">
+  <div class ="card-body" >
+    <h5 class="card-title">Dvds</h5>
+    <p class="card-text">No of Dvds:{{dvdCount}} </p>
+    <p class="card-text">Free Space:{{50-dvdCount}} </p>
+
+  </div>
+</div>
+
+<!--
+<ngx-charts-pie-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="single"
+  [legend]="showLegend"
+  [explodeSlices]="explodeSlices"
+  [labels]="showLabels"
+  [doughnut]="doughnut"
+  [gradient]="gradient"
+  (select)="onSelect($event)">
+</ngx-charts-pie-chart>
+-->

@@ -1,0 +1,40 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Add a DVD</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <form #dvdForm="ngForm" (ngSubmit)="onSubmit(dvdForm)" class="text-center border border-light p-5">
+      <p class="h4 mb-4">Add Dvds</p>
+
+      <input required type="text" #dvdISBN="ngModel" name="ISBN"  [(ngModel)] ="ISBN" class="form-control mb-4" placeholder="ISBN">
+      <div class="alert alert-danger" *ngIf="dvdISBN.touched&&!dvdISBN.valid">ISBN is required</div>
+
+      <input required type="text" #dvdtitle="ngModel" name="title" [(ngModel)] ="title" class="form-control mb-4" placeholder="Title">
+      <div class="alert alert-danger" *ngIf="dvdtitle.touched&&!dvdtitle.valid">Title is required</div>
+
+      <input required type="text" #dvdsector="ngModel" name="sector" [(ngModel)] ="sector" class="form-control mb-4" placeholder="Sector">
+      <div class="alert alert-danger" *ngIf="dvdsector.touched&&!dvdsector.valid">Sector is required</div>
+
+      <input required type="date" #dvdpublicationDate="ngModel" name="publicationDate" [(ngModel)] ="publicationDate"  class="form-control mb-4" placeholder="Publication Date">
+      <div class="alert alert-danger" *ngIf="dvdpublicationDate.touched&&!dvdpublicationDate.valid">Publication Date is required</div>
+
+      <input required type="text" #dvdlanguage="ngModel" name="language" [(ngModel)] ="language" class="form-control mb-4" placeholder="Available Languages">
+      <div class="alert alert-danger" *ngIf="dvdlanguage.touched&&!dvdlanguage.valid">Language/s required</div>
+
+      <input required type="text" #dvdsubtitles="ngModel" name="subtitles" [(ngModel)] ="subtitles" class="form-control mb-4" placeholder="Available Subtitles">
+      <div class="alert alert-danger" *ngIf="dvdsubtitles.touched&&!dvdsubtitles.valid">Subtitle/s required</div>
+
+      <input required type="text" #dvdproducer="ngModel" name="producer" [(ngModel)] ="producer" class="form-control mb-4" placeholder="Producer">
+      <div class="alert alert-danger" *ngIf="dvdproducer.touched&&!dvdproducer.valid">Producer is required</div>
+
+      <input required type="text" #dvdactors="ngModel" name="actors" [(ngModel)] ="actors" class="form-control mb-4" placeholder="Actors">
+      <div class="alert alert-danger" *ngIf="dvdactors.touched&&!dvdactors.valid">Actors are required</div>
+
+      <button (click)="onSubmit(dvdForm.value)" mdbBtn color="indigo" block="true" type="submit">Add</button>
+     <!-- <button (click)="onSubmit(dvdISBN.value)" mdbBtn color="info" block="true" type="submit">Add</button>-->
+
+    </form>
+  </mat-card-content>
+</mat-card>

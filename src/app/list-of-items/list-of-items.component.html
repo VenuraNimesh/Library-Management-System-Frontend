@@ -1,0 +1,39 @@
+<mat-card class="example-card">
+  <mat-card-header>
+
+    <mat-card-title>Items List</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <div><B>Item List</B></div><br>
+    <table mdbTable class="z-depth-1">
+
+      <thead>
+      <tr>
+        <th>Availability</th>
+        <th>Index</th>
+        <th> ISBN </th>
+        <th> Title </th>
+        <th> Sector </th>
+        <th> Type </th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items; let i = index">
+        <td *ngIf="item.currentReader==null; else availability "><i class="fa fa-circle green-text"></i>
+        </td><ng-template #availability><td><i class="fa fa-circle red-text"></i></td></ng-template>
+        <td>{{ i +1 }} </td>
+        <td>{{item.isbn}} </td>
+        <td>{{item.title}} </td>
+        <td>{{item.sector}} </td>
+        <td *ngIf="item.hasOwnProperty('author'); else elseBlock">Book</td>
+        <ng-template #elseBlock><td>DVD</td></ng-template>
+
+
+      </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>

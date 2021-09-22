@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Delete Item</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <form class="text-center border border-light p-5">
+
+      <p class="h4 mb-4">Delete an Item</p>
+      <!--<input type="text" id="isbnItem" class="form-control mb-4" placeholder="ISBN">-->
+
+      <input type="text" #ISBNItem name="ISBN" [(ngModel)]="ISBN" class="form-control mb-4" placeholder="ISBN">
+
+      <button (click)="onSubmit(ISBNItem.value)" mdbBtn color="indigo" block="true" type="submit">Delete</button>
+
+
+     </form>
+  </mat-card-content>
+</mat-card>

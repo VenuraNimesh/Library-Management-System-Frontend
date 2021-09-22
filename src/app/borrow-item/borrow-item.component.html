@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Borrow Item</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <form #borrowForm="ngForm" (ngSubmit)="onSubmit(borrowForm)" class="text-center border border-light p-5">
+
+      <p class="h4 mb-4">Borrow Items</p>
+
+
+      <input required type="text" #borrowISBN="ngModel" name="ISBN" [(ngModel)] ="ISBN" class="form-control mb-4" placeholder="ISBN">
+      <input required type="text" #borrowreaderId="ngModel" name="readerId" [(ngModel)] ="readerId" class="form-control mb-4" placeholder="Reader ID">
+      <input required type="datetime-local" #borrowborrowDate="ngModel" name="borrowDate" [(ngModel)] ="borrowDate"  class="form-control mb-4" placeholder="BorrowDate">
+
+      <button (click)="onSubmit(borrowForm.value)"mdbBtn color="indigo" block="true" type="submit">Borrow</button>
+
+      <input required type="text" #dvdactors="ngModel" name="actors" [(ngModel)] ="actors" class="form-control mb-4" placeholder="Actors">
+
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,94 @@
+<mat-card class="example-card">
+  <!--<mat-card-header>
+    <mat-card-title>Add a Book</mat-card-title>
+  </mat-card-header>
+-->
+  <mat-card-content>
+
+    <form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)" class="text-center border border-light p-5">
+      <p class="h4 mb-4">Add Books</p>
+
+      <input required type="text"  #bookIsbnNoBook="ngModel" name="ISBN" [(ngModel)]="ISBN" class="form-control mb-4" placeholder="ISBN" >
+      <div class="alert alert-danger" *ngIf="bookIsbnNoBook.touched&&!bookIsbnNoBook.valid">ISBN is required</div>
+
+      <input required type="text" #bookTitle="ngModel" name="title" [(ngModel)]="title" class="form-control mb-4" placeholder="Title">
+      <div class="alert alert-danger" *ngIf="bookTitle.touched&&!bookTitle.valid">Title is required</div>
+
+      <input required type="text" #bookSector="ngModel"  name="sector" [(ngModel)]="sector" class="form-control mb-4" placeholder="Sector">
+      <div class="alert alert-danger" *ngIf="bookSector.touched&&!bookSector.valid">Sector is required</div>
+
+      <input required type="date" #bookPubDateBook="ngModel"  name="publicationDate" [(ngModel)]="publicationDate" class="form-control mb-4" placeholder="Publication Date">
+      <div class="alert alert-danger" *ngIf="bookPubDateBook.touched&&!bookPubDateBook.valid">Publication date is required</div>
+
+      <input required type="text" #bookAuthorsBook="ngModel"  name="authors" [(ngModel)]="authors" class="form-control mb-4" placeholder="Author">
+      <div class="alert alert-danger" *ngIf="bookAuthorsBook.touched&&!bookAuthorsBook.valid">Author/s required</div>
+
+      <input required type="text" #bookPublisherBook="ngModel"  name="publisherBook" [(ngModel)]="publisherBook" class="form-control mb-4" placeholder="Publisher">
+      <div class="alert alert-danger" *ngIf="bookPublisherBook.touched&&!bookPublisherBook.valid">Publisher is required</div>
+
+      <input required type="number" #bookPagesBook="ngModel"  name="pagesBook" [(ngModel)]="pagesBook" class="form-control mb-4" placeholder="No.of Pages">
+      <div class="alert alert-danger" *ngIf="bookPagesBook.touched&&!bookPagesBook.valid">No of pages required</div>
+
+      <button (click)="onSubmit(bookForm.value)" mdbBtn color="indigo" block="true" type="submit">Add</button>
+    </form>
+
+  </mat-card-content>
+</mat-card>
+
+<!--
+
+
+<div class=" col-sm-3 card p-1"   *ngFor="let item of items">
+  <div class="card-body">
+    <h5 class="card-title">{{item.ISBN}}. {{item.title}}</h5>
+    <p class="card-text">Building Number :{{item.sectorBook}} </p>
+    <p class="card-text">Floor Number :{{item.pubDateBook}} </p>
+    <p class="card-text">Floor Number :{{item.authorsBook}} </p>
+    <p class="card-text">Floor Number :{{item.publisherBook}} </p>
+    <p class="card-text">Floor Number :{{item.pagesBook}} </p>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12 mx-auto">
+    <div class="md-form">
+      <input type="text" [(ngModel)]="searchText" class="form-control" id="search" mdbInputDirective>
+      <label for="search">Search</label>
+    </div>
+  </div>
+</div>
+
+
+<table mdbTable class="z-depth-1">
+  <thead>
+  <tr>
+    <th>
+      Index
+    </th>
+    <th> titleBook </th>
+    <th> sectorBook </th>
+    <th> pubDateBook </th>
+    <th> authorsBook </th>
+    <th> publisherBook </th>
+    <th> pagesBook </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items; let i = index">
+    <td>{{ i +1 }} </td>
+    <td>{{item.ISBN}}</td>
+    <td>{{item.title}} </td>
+    <td>{{item.sector}} </td>
+   &lt;!&ndash; <td>{{item.pubDateBook}} </td>
+    <td>{{item.authorsBook}} </td>
+    <td>{{item.publisherBook}} </td>
+    <td>{{item.pagesBook}} </td>&ndash;&gt;
+  </tr>
+  </tbody>
+</table>
+-->
+
+
+
